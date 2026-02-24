@@ -9,12 +9,13 @@ let jobs = [
 
     { id: 4, company: "CloudFirst Inc", position: "Backend Developer", location: "Seattle, WA", type: "Contract", salary: "$140,000 - $190,000", description: "JDesign and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.", status: "NOT APPLIED" },
 
-    { id: 5, company: "Creative Minds IT", position: "Digital Marketer", location: "Dhaka, BD", type: "Full-time", salary: "৳25,000 - ৳40,000", description: "Manage social media campaigns, SEO, and email marketing strategies to boost client engagement and brand visibility.", status: "NOT APPLIED" },
+    { id: 5, company: "Innovation Labs", position: "UI/UX Engineer", location: "Austin, TX", type: "Full-time", salary: "$110,000 - $150,000", description: "Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required", status: "NOT APPLIED" },
 
-    { id: 6, company: "AppWorks Lab", position: "Mobile App Developer", location: "Remote", type: "Full-time", salary: "$2,500 - $4,000", description: "Create cross-platform mobile applications using Flutter. Experience with state management and API integration is essential.", status: "NOT APPLIED" },
+     { id: 6, company: "MegaCorp Solutions", position: "JavaScript Developer", location: "New York, NY", type: "Full-time", salary: "$130,000 - $170,00", description: "Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.", status: "NOT APPLIED" },
 
 
-    { id: 7, company: "SecureNet Systems", position: "Cyber Security Analyst", location: "Dhaka, BD", type: "Full-time", salary: "৳60,000 - ৳100,000", description: "Monitor network traffic for security threats, perform vulnerability assessments, and implement security protocols.", status: "NOT APPLIED" },
+    { id: 7, company: "StartupXYZ", position: "Full Stack Engineer", location: "Remote", type: "Full-time", salary: "$120,000 - $160,000", description: "Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.", status: "NOT APPLIED" },
 
-    { id: 8, company: "CloudFirst Tech", position: "DevOps Engineer", location: "Remote", type: "Full-time", salary: "$3,000 - $5,000", description: "Automate deployment pipelines, manage AWS infrastructure, and ensure high availability of our cloud services.", status: "NOT APPLIED" }
+    { id: 8, company: "TechCorp Industries", position: "Senior Frontend Developer", location: "San Francisco, CA", type: "Full-time", salary: "$130,000 - $175,000", description: "We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects." }
+   
 ], 
