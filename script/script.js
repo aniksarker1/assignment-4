@@ -94,3 +94,24 @@ function render() {
         });
     }
 }
+
+
+window.changeTab = function(tabName) {
+    currentTab = tabName;
+    
+    const tabs = ['All', 'Interview', 'Rejected'];
+    tabs.forEach(t => {
+        const btn = document.getElementById(`tab-${t.toLowerCase()}`);
+        if(t === tabName) {
+            btn.classList.replace('bg-transparent', 'bg-blue-600');
+            btn.classList.replace('text-gray-500', 'text-white');
+            btn.classList.remove('hover:bg-gray-100');
+        } else {
+            btn.classList.replace('bg-blue-600', 'bg-transparent');
+            btn.classList.replace('text-white', 'text-gray-500');
+            btn.classList.add('hover:bg-gray-100');
+        }
+    });
+
+    render();
+}
