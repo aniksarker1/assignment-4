@@ -19,3 +19,78 @@ let jobs = [
     { id: 8, company: "TechCorp Industries", position: "Senior Frontend Developer", location: "San Francisco, CA", type: "Full-time", salary: "$130,000 - $175,000", description: "We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects." }
    
 ], 
+
+let currentTab = "All";
+const jobsContainer = document.getElementById("jobs-container");
+const emptyState = document.getElementById("empty-state");
+const dashTotal = document.getElementById("dash-total");
+const dashInterview = document.getElementById("dash-interview");
+const dashRejected = document.getElementById("dash-rejected");
+const tabCount = document.getElementById("tab-count");
+
+function render() {
+    dashTotal.innerText = jobs.length;
+    dashInterview.innerText = jobs.filter(job => job.status === "Interview").length;
+    dashRejected.innerText = jobs.filter(job => job.status === "Rejected").length;
+
+
+    let filteredJobs = jobs;
+    if (currentTab !== "All") {
+        filteredJobs = jobs.filter(job => job.status === currentTab);
+    }
+
+  
+    tabCount.innerText = `${filteredJobs.length} jobs`;
+
+   
+    if (filteredJobs.length === 0) {
+        jobsContainer.classList.add("hidden");
+        emptyState.classList.remove("hidden");
+        emptyState.classList.add("flex");
+    } else {
+        jobsContainer.classList.remove("hidden");
+        emptyState.classList.add("hidden");
+        emptyState.classList.remove("flex");
+        
+      
+        jobsContainer.innerHTML = "";
+        filteredJobs.forEach(job => {
+            const card = document.createElement("div");
+            card.className = "border border-gray-200 rounded-lg p-5 relative hover:shadow-md transition-shadow bg-white";
+            
+            card.innerHTML = `
+                <button onclick="deleteJob(${job.id})" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors">
+                    <i class="fa-regular fa-trash-can"></i>
+                </button>
+                
+                <h3 class="text-lg font-bold text-gray-800">${job.company}</h3>
+                <p class="text-sm text-gray-600 font-medium mb-3">${job.position}</p>
+                
+                <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500 mb-4">
+                    <span><i class="fa-solid fa-location-dot mr-1"></i> ${job.location} • ${job.type} • ${job.salary}</span>
+                </div>
+                
+                <div class="mb-4">
+                    <span class="px-2 py-1 text-[10px] font-bold tracking-wider rounded bg-blue-50 text-blue-600 border border-blue-200 uppercase">${job.status}</span>
+                </div>
+                
+                <p class="text-sm text-gray-600 mb-6 leading-relaxed">${job.description}</p>
+                
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="updateStatus(${job.id}, 'Interview')" 
+                        class="px-6 py-2 rounded text-xs font-bold transition-colors border 
+                        ${job.status === 'Interview' ? 'bg-green-500 text-white border-green-500' : 'bg-transparent text-green-600 border-green-500 hover:bg-green-50'}">
+                        INTERVIEW
+                    </button>
+                    
+                    <button onclick="updateStatus(${job.id}, 'Rejected')" 
+                        class="px-6 py-2 rounded text-xs font-bold transition-colors border 
+                        ${job.status === 'Rejected' ? 'bg-red-500 text-white border-red-500' : 'bg-transparent text-red-500 border-red-500 hover:bg-red-50'}">
+                        REJECTED
+                    </button>
+                </div>
+            `;
+            jobsContainer.appendChild(card);
+        });
+    }
+}
