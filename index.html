@@ -51,5 +51,43 @@
                 </div>
             </div>
         </section>
+
+        <section class="bg-white border border-blue-100 rounded-lg p-6 shadow-sm min-h-[500px]">
+
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+                <h2 class="text-xl font-bold text-gray-800">Available Jobs
+                </h2>
+
+                <span id="tab-count" class="text-sm text-gray-500 font-medium mt-2 sm:mt-0">8 jobs
+                </span>
+
+            </div>
+
+            <div class="flex space-x-2 border-b border-gray-200 pb-3 mb-6">
+                <button id="tab-all" onclick="changeTab('All')" class="px-5 py-1.5 text-sm font-medium rounded bg-blue-600 text-white transition-colors">All
+                </button>
+
+                <button id="tab-interview" onclick="changeTab('Interview')" class="px-5 py-1.5 text-sm font-medium rounded bg-transparent text-gray-500 hover:bg-gray-100 transition-colors">Interview
+                </button>
+
+                <button id="tab-rejected" onclick="changeTab('Rejected')" class="px-5 py-1.5 text-sm font-medium rounded bg-transparent text-gray-500 hover:bg-gray-100 transition-colors">Rejected
+                </button>
+            </div>
+
+            <div id="jobs-container" class="space-y-4">
+                </div>
+
+            <div id="empty-state" class="hidden flex-col items-center justify-center py-16 text-center">
+                <div class="w-16 h-16 bg-blue-50 text-blue-400 rounded-full flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-file-lines text-3xl">
+                    </i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800">No jobs available
+                </h3>
+                <p class="text-sm text-gray-500 mt-1">Check back later for more job opportunities.
+                </p>
+            </div>
+
+        </section>
   </body>
 </html>
